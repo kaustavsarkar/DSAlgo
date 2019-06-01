@@ -19,11 +19,11 @@ public class MergeSort {
             int middle = (low + high + 1) / 2;
             divide(arr, middle - 1, low);// left side
             divide(arr, high, middle);// right side
-            merge(arr, low, high, middle);
+            descMerge(arr, low, high);
         }
     }
 
-    public void merge(int[] arr, int l, int h, int m) {
+    public void merge(int[] arr, int l, int h) {
         int temp[] = new int[h - l + 1];
         for (int i = 0; i < temp.length; i++) { // copying array to temp array
             temp[i] = arr[l + i];
@@ -48,5 +48,29 @@ public class MergeSort {
         }
     }
 
-    // 0000,1,5,7,3,8,9,00000
+    public void descMerge(int[] arr, int l ,int h) {
+        int temp[] = new int[h - l + 1];
+        for (int i = 0; i < temp.length; i++) { // copying array to temp array
+            temp[i] = arr[l + i];
+        }
+        int low = 0;
+        int high = temp.length;
+        int mid = (low + high) / 2;
+        int middle = mid;
+        int counter = 0;
+        while (low < middle && mid < high) { // loop till low comes to mid || mid reaches high
+            if (temp[low] > temp[mid]) {
+                arr[l + counter++] = temp[low++];
+            } else {
+                arr[l + counter++] = temp[mid++];
+            }
+        }
+        while (low < middle) { //Add anything remaining below middle
+            arr[l + counter++] = temp[low++];
+        }
+        while (mid < high) { // Add anything remaining post middle
+            arr[l + counter++] = temp[mid++];
+        }
+    }
+   
 }
