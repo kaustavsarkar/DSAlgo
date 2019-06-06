@@ -1,7 +1,9 @@
 package bst;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinarySearchTree {
@@ -60,6 +62,34 @@ public class BinarySearchTree {
         while (!postOrderIt.isEmpty()) {
             System.out.print(postOrderIt.pop() + ",");
         }
+
+        System.out.println();
+        
+        int height = bst.treeHeight(bst.root);
+        int htIt = bst.treeHeightIt(bst.root);
+        
+        List<Integer> levelOrder = bst.levelTreeTrav(bst.root);
+        System.out.println(levelOrder);
+        
+    }
+
+    public List<Integer> levelTreeTrav(Node node) {
+        Queue<Node> nodeQueue = new LinkedList<>();
+        List<Integer> levelOrder = new ArrayList<>();
+        Node current = node;
+        while (current != null || !nodeQueue.isEmpty()) {
+            if (current != null) {
+                if (current.left != null) {
+                    nodeQueue.add(current.left);
+                }
+                if (current.right != null) {
+                    nodeQueue.add(current.right);
+                }
+            }
+            levelOrder.add(current.key);
+            current = nodeQueue.poll();
+        }
+        return levelOrder;
     }
 
     public void inorderTreeTrav(Node node, List<Integer> inorder) {
@@ -126,6 +156,7 @@ public class BinarySearchTree {
     }
 
     public Stack<Integer> postOrderTravIt(Node node) {
+
         Stack<Integer> postOrderStack = new Stack<>();
         Stack<Node> nodeStack = new Stack<>();
         nodeStack.push(node);
@@ -141,5 +172,41 @@ public class BinarySearchTree {
             }
         }
         return postOrderStack;
+    }
+
+    public int treeHeight(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        int lDepth = treeHeight(node.left);
+        int rDepth = treeHeight(node.right);
+        if (lDepth > rDepth) {
+            return lDepth + 1;
+        } else {
+            return rDepth + 1;
+        }
+    }
+
+    public int treeHeightIt(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        Stack<Node> nodeStack = new Stack<>();
+        Node current = node;
+        int depth = 0;
+        int currentDepth = 0;
+        while (current != null || !nodeStack.isEmpty()) {
+            if (current != null) {
+                nodeStack.push(current);
+                current = current.left;
+                currentDepth++;
+            } else {
+                current = nodeStack.pop();
+                current = current.right;
+                currentDepth--;
+            }
+            depth = depth > currentDepth ? depth : currentDepth;
+        }
+        return depth;
     }
 }
