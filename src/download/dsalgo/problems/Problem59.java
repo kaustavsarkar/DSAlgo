@@ -1,5 +1,6 @@
 package download.dsalgo.problems;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 /**
@@ -27,9 +28,15 @@ import java.util.Arrays;
 public class Problem59 {
 
 	public static void main(String[] args) {
-		String input = "aaaabaaa";
+		String input = "cbbd";
 		ManarchersAlgo man = new Problem59.ManarchersAlgo();
-		
+		//System.out.println(Integer.MAX_VALUE);
+		//System.out.println(Integer.MIN_VALUE);
+		//System.out.println(Long.MIN_VALUE);
+		//System.out.println(-2%10);
+		BigDecimal b = new BigDecimal("-9223372036854775808");
+		System.out.println(b.compareTo(new BigDecimal(Integer.MAX_VALUE)));
+		System.out.println(b.intValue());
 		System.out.println(man.longestPalindrome(input));
 	}
 

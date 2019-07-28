@@ -25,9 +25,9 @@ public class Problem94 {
 		node.next.next.next.next.next = new ListNode(11);
 		node.next.next.next.next.next.next = new ListNode(13);
 		node.next.next.next.next.next.next.next = new ListNode(15);
-
-		print(new Problem94().reverseBetween(node, 2, 6));
 		node.print();
+		print(new Problem94().reverseBetween(node, 2, 6));
+		
 	}
 
 	private static void print(ListNode node) {

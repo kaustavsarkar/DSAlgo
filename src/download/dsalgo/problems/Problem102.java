@@ -24,10 +24,10 @@ public class Problem102 {
 		node.next.next = new ListNode(3);
 		node.next.next.next = new ListNode(4);
 		node.next.next.next.next = new ListNode(5);
-		node.next.next.next.next.next = new ListNode(6);
-		node.next.next.next.next.next.next = new ListNode(7);
+		//node.next.next.next.next.next = new ListNode(6);
+		//node.next.next.next.next.next.next = new ListNode(7);
 		node.print();
-		ListNode newNode = new Problem102().reverseList(node, 2);
+		ListNode newNode = new Problem102()._reverseList(node, 3);
 		newNode.print();
 	}
 
@@ -57,6 +57,7 @@ public class Problem102 {
 	}
 
 	public ListNode _reverseList(ListNode node, int B) {
+		if(node == null || node.next == null) return node;
 		ListNode current = node;
 		ListNode previous = null;
 		ListNode next = null;

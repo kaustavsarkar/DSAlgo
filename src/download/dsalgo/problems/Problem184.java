@@ -1,9 +1,13 @@
 package download.dsalgo.problems;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.PriorityQueue;
+
 public class Problem184 {
 
 	public static void main(String[] args) {
-
+		Deque<Integer> deq = new ArrayDeque<>();
 	}
 
 	public int solution(String S) {

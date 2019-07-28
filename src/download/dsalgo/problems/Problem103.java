@@ -20,6 +20,7 @@ public class Problem103 {
 		node.next.next.next = new ListNode(4);
 		node.next.next.next.next = new ListNode(5);
 
+		node.print();
 		ListNode rotate = new Problem103().rotateRight(node, 9);
 		rotate.print();
 	}

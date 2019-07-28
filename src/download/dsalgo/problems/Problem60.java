@@ -1,6 +1,8 @@
 package download.dsalgo.problems;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Implement strStr().
@@ -22,7 +24,8 @@ public class Problem60 {
 
 	public static void main(String[] args) {
 		Problem60 problem = new Problem60();
-
+		Set<Integer> set = new HashSet<>();
+		set.addAll(Arrays.asList(1,2,3));
 		System.out.println(problem.strStr("HELLOWORLD", "LOW"));
 		// System.out.println(Arrays.toString(problem.createRepPat("ABCD")));
 	}

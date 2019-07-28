@@ -34,6 +34,20 @@ public class Problem66 {
 		Problem66 problem = new Problem66();
 		System.out.println(problem.intToRoman(3998));
 	}
+	public String __intToRoman(int num) {
+        String[] strs = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] nums = new int[]{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        while (num > 0) {
+            while (num >= nums[i]) {
+                sb.append(strs[i]);
+                num -= nums[i];
+            }
+            i++;
+        }
+        return sb.toString();
+    }
 	public String _intToRoman(int n) {
         String o[]={"","I","II","III","IV","V","VI","VII","VIII","IX"}; 
         String t[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
