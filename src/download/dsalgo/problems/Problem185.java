@@ -50,6 +50,7 @@ class Trie {
 	public Trie() {
 		this.root = new TrieNode();
 	}
+	
 
 	public TrieNode getRoot() {
 		return this.root;
