@@ -50,15 +50,16 @@ public class Problem242 {
 
 	private boolean performDFS(ArrayList<String> a, String b, int row,
 			int col) {
-		
-		if(row < 0 || row > a.size() || col < 0 || col > a.get(row).length()) {
-			return false;
-		}
-		
+
 		if(b == null || b.isEmpty()) {
 			return true;
 		}
-		
+
+		if(row < 0 || row > a.size() || col < 0 || col > a.get(row).length()) {
+			return false;
+		}
+
+
 		boolean found = false;
 		if(a.get(row).charAt(col) == b.charAt(0)) {
 			found = performDFS(a, b.substring(1), row+1, col) ||

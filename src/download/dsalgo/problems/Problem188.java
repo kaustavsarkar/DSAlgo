@@ -1,5 +1,6 @@
 package download.dsalgo.problems;
 
+import java.util.Deque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -40,7 +41,7 @@ public class Problem188 {
 			return 0;
 		});
 		ListNode head = new ListNode(0);
-		
+		PriorityQueue<Integer> deq = new PriorityQueue<>();
 		//populate queue
 		for(ListNode list : lists) {
 			listNodeQ.add(list);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * pack your words in a greedy approach; that is, pack as many words as you can
  * in each line.
  * 
- * Pad extra spaces ‘ ‘ when necessary so that each line has exactly L
+ * Pad extra spaces ï¿½ ï¿½ when necessary so that each line has exactly L
  * characters. Extra spaces between words should be distributed as evenly as
  * possible. If the number of spaces on a line do not divide evenly between
  * words, the empty slots on the left will be assigned more spaces than the
@@ -35,7 +35,8 @@ import java.util.ArrayList;
 public class Problem70 {
 
 	public static void main(String[] args) {
-
+		StringBuilder builder = new StringBuilder();
+		//builder.ins
 	}
 
 	public ArrayList<String> fullJustify(ArrayList<String> A, int B) {

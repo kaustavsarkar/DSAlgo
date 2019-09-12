@@ -1,8 +1,6 @@
 package download.dsalgo.problems;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Implement strStr().
@@ -26,7 +24,9 @@ public class Problem60 {
 		Problem60 problem = new Problem60();
 		Set<Integer> set = new HashSet<>();
 		set.addAll(Arrays.asList(1,2,3));
-		System.out.println(problem.strStr("HELLOWORLD", "LOW"));
+		System.out.println((char) (1 + '0'));
+		System.out.println(problem.strStr("ababcaababcaabc"
+				, "ababcaabc"));
 		// System.out.println(Arrays.toString(problem.createRepPat("ABCD")));
 	}
 
@@ -40,7 +40,7 @@ public class Problem60 {
 		int[] repPat = createRepPat(B);
 		int a = 0;
 		int b = 0;
-
+		System.out.println(Arrays.toString(repPat));
 		while (b < B.length() && a < A.length()) {
 			if (A.charAt(a) == B.charAt(b)) {
 				a++;

@@ -29,6 +29,11 @@ public class DijkstraSP {
 
 	}
 
+	/**
+	 * This is wrong implementation. Sorted Map shall not work the way expected here
+	 * @param graph
+	 * @param source
+	 */
 	public void dijkstra(Graph<Integer> graph, Vertex<Integer> source) {
 		SortedMap<Long, Node<Integer>> nodeMap = new TreeMap<>();
 		Map<Long, Integer> distanceMap = new HashMap<>();

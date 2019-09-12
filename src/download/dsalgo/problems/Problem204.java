@@ -38,7 +38,7 @@ public class Problem204 {
 			if(A.get(index) > 0) {
 				prevMaxProd *= A.get(index);
 				prevMinProd = Math.min(prevMinProd*A.get(index), 1);
-				flag = !flag;
+				flag = true;
 			} else if(A.get(index)==0) {
 				prevMaxProd = 1;
 				prevMinProd = 1;

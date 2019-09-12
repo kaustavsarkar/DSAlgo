@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * Example :
  * 
  * Input : "9 2704" Output : 9 Note: There might be multiple corner cases here.
- * Clarify all your doubts using “See Expected Output”.
+ * Clarify all your doubts using ï¿½See Expected Outputï¿½.
  * 
  * Questions: Q1. Does string contain whitespace characters before the number?
  * A. Yes Q2. Can the string have garbage characters after the number? A. Yes.
@@ -31,7 +31,7 @@ public class Problem62 {
 			return 0;
 		}
 		int counter = 0;
-		BigDecimal num = 0l;
+		long num = 0l;
 		StringBuilder string = new StringBuilder();
 		while (counter < A.length()) {
 			if (string.length() == 0 && A.charAt(counter) == ' ') {

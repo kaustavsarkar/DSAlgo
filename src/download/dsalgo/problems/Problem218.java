@@ -1,5 +1,7 @@
 package download.dsalgo.problems;
 
+import java.util.Arrays;
+
 /**
  * Implement regular expression matching with support for '.' and '*'.
  * 
@@ -23,11 +25,45 @@ package download.dsalgo.problems;
 public class Problem218 {
 
 	public static void main(String[] args) {
-		String string = "abbbc";
-		String pattern = "ab*c";
-		System.out.println(new Problem218().isMatch(string, pattern));
+		String string = "mississippi";
+		String pattern = "mis*is*p*.";
+		System.out.println(new Problem218()._isMatch(string, pattern));
 	}
+	public boolean _isMatch(String s, String p) {
+		if(p.equals(".*")) {
+			return true;
+		}
+		int patternSize = p.length();
+		boolean[] prev = new boolean[patternSize + 1];
+		boolean[] current = new boolean[patternSize + 1];
+		prev[0] = true;
 
+		//Initialise prev for blank string
+		for(int patIndex = 0; patIndex < patternSize; patIndex++) {
+			if(p.charAt(patIndex) == '*') {
+				prev[patIndex + 1] = prev[patIndex-1];
+			}
+		}
+		System.out.println(Arrays.toString(prev));
+		for(int stringIndex = 0; stringIndex < s.length(); stringIndex++) {
+			for(int patIndex = 0; patIndex < patternSize; patIndex++) {
+				current[patIndex+1] = false;
+				if(p.charAt(patIndex) == '.' || p.charAt(patIndex) == s.charAt(stringIndex)) {
+					current[patIndex + 1] = prev[patIndex];
+				} else if(p.charAt(patIndex) == '*') {
+					current[patIndex + 1] = current[patIndex - 1];
+					if(p.charAt(patIndex) == '.' || p.charAt(patIndex - 1) == s.charAt(stringIndex)) {
+						current[patIndex + 1] = current[patIndex + 1] || prev[patIndex + 1];
+					}
+				}
+			}
+			System.out.print(s.charAt(stringIndex));
+			System.out.println(Arrays.toString(current));
+			prev = current.clone();
+		}
+
+		return current[patternSize];
+	}
 	public int isMatch(final String string, final String pattern) {
 		if ((string == null || string.isEmpty())
 				&& (pattern == null || pattern.isEmpty())) {

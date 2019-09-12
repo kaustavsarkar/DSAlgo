@@ -13,9 +13,17 @@ public class Strings {
 		strings.add("34");
 		strings.add("35");
 		strings.add("3");
-		
+		StringBuilder builder = new StringBuilder();
+
 		Collections.sort(strings);
-		System.out.println("2".substring(1, 2));
-		
+		System.out.println('A'+'B');
+		print(null);
+	}
+
+	public static void print(String string) {
+		System.out.println("string");
+	}
+	public static void print(Object object) {
+		System.out.println("object");
 	}
 }

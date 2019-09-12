@@ -24,12 +24,12 @@ public class Problem217 {
 		String string = 
 				//"bbbcbcb"; 
 				//"bcabbbbcb";
-		// "bb";
-		 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+		 "bb";
+		// "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 		String regex = //"**b"; 
-				//"?b*?b*b";
-		// "bca*aaa*b*bb";
-		 "a**************************************************************************************";
+				"?b*?b*b";
+		 //"bca*aaa*b*bb";
+		 //"a**************************************************************************************";
 		System.out.println(new Problem217()._isMatch(string, regex));
 	}
 

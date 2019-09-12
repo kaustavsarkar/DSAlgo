@@ -30,7 +30,10 @@ public class Problem136 {
 		String string1 = "ADOBECODEBANC";
 		String string2 = "ABC";
 
-		System.out.println(new Problem136()._minWindow(string1, string2));
+		//System.out.println(new Problem136()._minWindow(string1, string2));
+		for(int i = 91; i < 100; i++) {
+			System.out.println((char) i);
+		}
 	}
 
 	public String _minWindow(String s, String B) {
@@ -39,7 +42,7 @@ public class Problem136 {
 			need[c-'A']++;
 		int i = 0, j = 0, l = 0, r = 0, missing = B.length();
 		while (r < s.length()) {
-			char right = (char) (s.charAt(r) - 'A');
+			int right = (char) (s.charAt(r) - 'A');
 			if (need[right] > 0)
 				missing -= 1;
 			need[right]--;
@@ -49,7 +52,7 @@ public class Problem136 {
 					j = r;
 					i = l;
 				}
-				char left = (char) (s.charAt(l)-'A');
+				int left = (char) (s.charAt(l)-'A');
 				need[left]++;
 				if (need[left] > 0)
 					missing += 1;

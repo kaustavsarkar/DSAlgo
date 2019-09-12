@@ -1,5 +1,7 @@
 package download.dsalgo.poc;
 
+import java.util.Arrays;
+
 public class Bitwise {
 
 	public static void main(String[] args) {
@@ -10,7 +12,15 @@ public class Bitwise {
 		// bitwise.checkXOR(7, 2);
 
 		//bitwise.checkZeroOne();
-		bitwise.power(4);
+		int num = 1 << -31;
+		//System.out.println(Integer.toBinaryString(num).length());
+		//System.out.println(num);
+		//System.out.println(~-3);
+		System.out.println(Integer.toBinaryString(-2));
+		System.out.println(Integer.toBinaryString(-2 >> 1));
+		System.out.println(Integer.toBinaryString(-2 >>> 1));
+
+		//bitwise.power(4);
 	}
 	
 	private void power(int i) {

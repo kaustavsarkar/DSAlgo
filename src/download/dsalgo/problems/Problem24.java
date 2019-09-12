@@ -28,23 +28,55 @@ import java.util.Arrays;
 public class Problem24 {
 
 	public static void main(String[] args) {
-		Integer[][] array = { { 1, 2 }, { 3, 4 } };
+		int[][] array = {{1,2,3},{4,5,6},{7,8,9}};
 		Problem24 problem = new Problem24();
 		ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
-
-		for (int i = 0; i < array.length; i++) {
-			ArrayList<Integer> temp = new ArrayList<>(Arrays.asList(array[i]));
-			matrix.add(temp);
-		}
+//		for (int i = 0; i < array.length; i++) {
+//			ArrayList<Integer> temp = new ArrayList<>(Arrays.asList(array[i]));
+//			matrix.add(temp);
+//		}
 
 		System.out.println(matrix);
 
-		problem.rotate(matrix);
+		problem.rotate(array);
 
 		System.out.println(matrix);
 	}
+	public void rotate(int[][] matrix) {
+		if(matrix == null || matrix.length == 1) {
+			return;
+		}
 
-	public void rotate(ArrayList<ArrayList<Integer>> a) {
+		int iterations = 0;
+		int length = matrix.length - 1;
+		int row = 0;
+		int innerIter = 0;
+		while(iterations < (matrix.length >> 1)) {
+			int col = row;
+			while(innerIter < length - 2*iterations) {
+
+				int temp = matrix[row][col];
+
+				//replace left with top
+				matrix[row][col] = matrix[length - col][row];
+
+				//replace bottom with left
+				matrix[length - col][row] = matrix[length - row][length - col];
+
+				//replace right with bottom
+				matrix[length - row][length - col] = matrix[col][length - row];
+
+				//replace top with right
+				matrix[length - col][row] = temp;
+
+				innerIter++;
+				col++;
+			}
+			row++;
+			iterations++;
+		}
+	}
+	public void _rotate(ArrayList<ArrayList<Integer>> a) {
 		if (a.size() < 2) {
 			return;
 		}

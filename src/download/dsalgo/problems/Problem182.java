@@ -1,7 +1,7 @@
 package download.dsalgo.problems;
 
 public class Problem182 {
-
+	private static final int MOD = 1000000009;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

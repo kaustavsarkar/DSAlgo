@@ -14,6 +14,7 @@ public class Lists {
 		System.out.println(nums);
 		System.out.println(nums.size());
 		nums.add(1, 2);
+		((ArrayList) nums).clone();
 		System.out.println(nums);
 	}
 }
