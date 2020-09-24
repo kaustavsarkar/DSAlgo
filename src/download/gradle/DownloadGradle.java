@@ -4,8 +4,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import org.gradle.wrapper.GradleWrapperMain;
-
 public class DownloadGradle {
 
 	public static void main(String[] args) throws Exception {
